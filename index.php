@@ -1,2 +1,2 @@
 <?php
-echo "Hello LINE BOT";
+echo "Dixell Landing Page For Line App";
