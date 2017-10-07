@@ -10,9 +10,15 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text']=='test') {
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text' ) {
 			// Get text sent
-			$text = $event['source']['groupId'];
+			if($event['message']['text']=='test id'){
+				$text = $event['source']['userId'];
+			}else if($event['message']['text']=='test groupid'){
+				$text = $event['source']['groupId'];
+			}else{
+				break;
+			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
