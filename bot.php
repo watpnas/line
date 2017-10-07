@@ -6,11 +6,11 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
-if (!is_null($events['events'])&&false) {
+if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text']=='test') {
 			// Get text sent
 			$text = $event['source']['groupId'];
 			// Get replyToken
