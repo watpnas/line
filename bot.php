@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => "You're registered\nRef ID: " + $text
+				'text' => "You're registered\nRef ID: ".$text
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
