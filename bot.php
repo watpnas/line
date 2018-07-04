@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			}else if($event['source']['type']=='group'){
 				$text = $event['source']['groupId'];
 			}else if($event['source']['type']=='room'){
-				$text = $event['source']['roomID'];
+				$text = $event['source']['roomId'];
 			} 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
