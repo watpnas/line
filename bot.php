@@ -21,11 +21,11 @@ if (!is_null($events['events'])) {
 			} 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
+			$text = "You're registered\nRef ID: ".$text;
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => "You're registered\nRef ID: ".$text
+				'text' => $text
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
