@@ -3,6 +3,7 @@ $access_token = 'Y27E0UjR15NW0tcFH6jy9ku4z+0qLN1uSqTapuVLflT7W7lsOwS/9qZIxIvbBj7
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
+$events = json_decode($content, true);
 $url = 'https://api.line.me/oauth2/v2.1/token';
 $data = array( 'grant_type' => 'authorization_code', 'code' => $_GET["code"], 'redirect_uri' => 'https://dixellcallback.herokuapp.com/bot2.php', 'client_id' => '1592580012', 'client_secret' => '597224391a23fc9efb7a9646cd1f016d');
 
@@ -25,10 +26,10 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 if ($result === FALSE) { /* Handle error */   echo 'error'; }
 
-echo $content;
+echo $events;
 try {
     $key = "597224391a23fc9efb7a9646cd1f016d";
-    $token = $content['id_token'];
+    $token = $events['id_token'];
     $data = JWT::decode($token, $key, array('HS256'));
     echo $data;
 } catch (\Exception $e) { // Also tried JwtException
