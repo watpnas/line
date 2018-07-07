@@ -34,4 +34,5 @@ var_dump($options);
 
 if ($result === FALSE) { /* Handle error */   echo "<br/>result error"; }
 
-var_dump($result);
+$res = json_decode($result);
+echo 'ID_TOKENs = '.$res['id_token'];
