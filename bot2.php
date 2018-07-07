@@ -19,5 +19,8 @@ $context  = stream_context_create($options);
 if ($result === FALSE) { /* Handle error */ }
 
 //var_dump($result);
-var_dump($data);
+foreach ($data as $d) {
+    echo $d->type; 
+    echo "<br>";
+} 
 //echo $content;
