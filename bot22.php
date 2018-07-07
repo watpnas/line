@@ -5,6 +5,6 @@ $content = "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FjY2Vzcy5saW5lLm1lIiwic3V
 var_dump($content);
 $key = explode(".",$content);
 var_dump($key);
-$events = json_decode( base64_decode($key[0]), true);
+$events = json_decode( base64_decode($key[1]), true);
 var_dump($events);
 echo 'OK';
