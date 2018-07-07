@@ -27,5 +27,5 @@ $result = file_get_contents($url, false, $context);
 echo 'get token';
 if ($result === FALSE) { /* Handle error */   echo 'result error'; }
 
-echo $content;
+echo 'content='.$content;
 
