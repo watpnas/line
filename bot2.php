@@ -13,7 +13,7 @@ $options = array(
         'content' => http_build_query($data)
     )
 );
-echo "login\n";
+echo "login<br/>";
 foreach ($data as $d) {
     echo $d; 
     echo "<br/>";
@@ -23,7 +23,7 @@ foreach ($data as $d) {
 $url = 'https://api.line.me/oauth2/v2.1/token';
 $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
-echo "get token\n";
+echo "get token<br/>";
 if ($result === FALSE) { /* Handle error */   echo "result error"; }
 
 
