@@ -19,7 +19,7 @@ foreach ($data as $d) {
     echo $d->type; 
     echo "<br/>";
 } 
-//echo $content;
+echo $options;
 
 $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
