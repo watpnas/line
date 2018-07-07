@@ -26,3 +26,11 @@ $result = file_get_contents($url, false, $context);
 if ($result === FALSE) { /* Handle error */   echo 'error'; }
 
 echo $content;
+try {
+    $key = "597224391a23fc9efb7a9646cd1f016d";
+    $token = $content['id_token'];
+    $data = JWT::decode($token, $key, array('HS256'));
+    echo $data;
+} catch (\Exception $e) { // Also tried JwtException
+    echo 'error';
+}
