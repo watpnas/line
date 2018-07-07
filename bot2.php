@@ -2,7 +2,7 @@
 
 // Parse JSON
 
-$data = array( 'grant_type' => 'authorization_code', 'code' => $_GET["code"], 'redirect_uri' => 'https://dixellcallback.herokuapp.com/bot22.php', 'client_id' => '1592580012', 'client_secret' => '597224391a23fc9efb7a9646cd1f016d');
+$data = array( 'grant_type' => 'authorization_code', 'code' => $_GET["code"], 'redirect_uri' => 'https://dixellcallback.herokuapp.com/bot2.php', 'client_id' => '1592580012', 'client_secret' => '597224391a23fc9efb7a9646cd1f016d');
 
 // use key 'http' even if you send the request to https://...
 $options = array(
@@ -14,7 +14,7 @@ $options = array(
 );
 
 foreach ($options as $d) {
-    echo $d; 
+
     foreach ($d as $dd) {
     echo $dd; 
     echo "<br/>";
