@@ -19,5 +19,5 @@ $context  = stream_context_create($options);
 if ($result === FALSE) { /* Handle error */ }
 
 //var_dump($result);
-echo $data;
+var_dump($data);
 //echo $content;
