@@ -28,11 +28,4 @@ echo 'get token';
 if ($result === FALSE) { /* Handle error */   echo 'error'; }
 
 echo $events;
-try {
-    $key = "597224391a23fc9efb7a9646cd1f016d";
-    $token = $events['id_token'];
-    $data = JWT::decode($token, $key, array('HS256'));
-    echo $data;
-} catch (\Exception $e) { // Also tried JwtException
-    echo 'error';
-}
+
