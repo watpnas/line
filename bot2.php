@@ -23,7 +23,7 @@ foreach ($data as $d) {
 $url = 'https://api.line.me/oauth2/v2.1/token';
 $context  = stream_context_create($options);
 //$result = file_get_contents($url, false, $context);
-var_dump($result);
+var_dump($context);
 echo "get token<br/>";
 if ($result === FALSE) { /* Handle error */   echo "result error"; }
 
