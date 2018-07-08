@@ -65,7 +65,7 @@ $header=["type"=>"box",
 				'to' => $receiver,
 				'messages' => [$messages],
 			];
-
+echo $_GET['name'].$_GET['user'].$_GET['picture'];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 			$ch = curl_init($url);
