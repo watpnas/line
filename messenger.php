@@ -28,6 +28,26 @@ $body=["type"=> "box",
 		    		],
 		    		[
 		        		"type"=> "text",
+		        		"text"=> "Alarm Program: X",
+		        		"size"=> "xs",
+		        		"margin"=>"xl"
+		    		],
+		    		[
+		        		"type"=> "text",
+		        		"text"=> "Class: A",
+		        		"size"=> "xs",
+		    		],
+		    		[
+		        		"type"=> "text",
+		        		"text"=> "Status: Not Confirmed Yet",
+		        		"size"=> "xs",
+		    		],
+		    		[
+		    			"type"=>"separator",
+		    			"margin"=>"xl"
+		    		],
+		    		[
+		        		"type"=> "text",
 		        		"text"=> $_GET['user'],
 		        		"size"=> "xs",
 		        		"align"=>"center",
