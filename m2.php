@@ -22,6 +22,24 @@ $body=["type"=> "box",
 		        		"margin"=>"xl"
 		    		],
 		    		[
+		        		"type"=> "text",
+		        		"text"=> "Alarm Program: X",
+		        		"size"=> "xs",
+		        		"margin"=>"xl"
+		    		],
+		    		[
+		        		"type"=> "text",
+		        		"text"=> "Class: A",
+		        		"size"=> "xs",
+		        		"margin"=>"xl"
+		    		],
+		    		[
+		        		"type"=> "text",
+		        		"text"=> "Status: Not Confirmed Yet",
+		        		"size"=> "xs",
+		        		"margin"=>"xl"
+		    		],
+		    		[
 		    			"type"=>"separator",
 		    			"margin"=>"xl"
 		    		],
