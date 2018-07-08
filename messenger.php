@@ -24,3 +24,27 @@ $messages = [
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
+
+  $receiver = "Rc66c429735c8901454ae4edbebf2b128";	
+	$text ="คุณ ".$_GET['name']." เพิ่งลงทะเบียนเมื่อซักครู่\nรหัสอ้างอิง: ".$_GET['user'];
+$messages = [
+				'type' => 'text',
+				'text' => $text
+			];
+
+// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/push';
+			$data = [
+				'to' => $receiver,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
