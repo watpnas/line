@@ -1,8 +1,7 @@
 <?php
   $access_token ="Y27E0UjR15NW0tcFH6jy9ku4z+0qLN1uSqTapuVLflT7W7lsOwS/9qZIxIvbBj7rEE0F8H+qZG4QqoWz6fTD7D80Fgamap2na10G36zr0FCGJKi2+HCq9HoLXC2ae77uSzim5PiSOlHXz4caG3U+VwdB04t89/1O/w1cDnyilFU="; 
   $receiver = "U260c3c643d920b8e07e0f3d8b887e30a";
-  $receiver = "C02e1d1d95de60a1ab40ec150c24aa0bd";	
-  $receiver = "U260c3c643d920b8e07e0f3d8b887e30a";
+  $receiver = "C02e1d1d95de60a1ab40ec150c24aa0bd";
   
  
 $body=["type"=> "box",
@@ -65,7 +64,6 @@ $header=["type"=>"box",
 				'to' => $receiver,
 				'messages' => [$messages],
 			];
-echo $_GET['name'].$_GET['user'].$_GET['picture'];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 			$ch = curl_init($url);
@@ -77,5 +75,21 @@ echo $_GET['name'].$_GET['user'].$_GET['picture'];
 			$result = curl_exec($ch);
 			curl_close($ch);
 
-  $receiver = "Rc66c429735c8901454ae4edbebf2b128";	
+//Second Sending
+
+  $receiver = "Rc66c429735c8901454ae4edbebf2b128";
+			$data = [
+				'to' => $receiver,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
 
