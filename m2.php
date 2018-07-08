@@ -3,7 +3,7 @@
   $receiver = "U260c3c643d920b8e07e0f3d8b887e30a";
   
   
-$msg='  {
+$msg='{
 "to":"U260c3c643d920b8e07e0f3d8b887e30a",
   "messages":[
   	{
