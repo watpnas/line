@@ -75,4 +75,5 @@ $header=["type"=>"box",
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
+var_dump($result);
 			curl_close($ch);
