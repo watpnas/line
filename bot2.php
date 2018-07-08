@@ -39,6 +39,6 @@ $res = json_decode($result,true);
 $key = explode(".",$res['id_token']);
 $events = json_decode( base64_decode($key[1]), true);
 //var_dump($events);
-$xml = file_get_contents("https://dixellcallback.herokuapp.com/messenger.php?user=".$events['sub']."&name=".$events['name']);
+$xml = file_get_contents("https://dixellcallback.herokuapp.com/messenger.php?user=".$events['sub']."&name=".$events['name']."&picture=".$events['picture']);
 
 echo "Thank You!";
