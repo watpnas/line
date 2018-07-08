@@ -2,71 +2,56 @@
   $access_token ="Y27E0UjR15NW0tcFH6jy9ku4z+0qLN1uSqTapuVLflT7W7lsOwS/9qZIxIvbBj7rEE0F8H+qZG4QqoWz6fTD7D80Fgamap2na10G36zr0FCGJKi2+HCq9HoLXC2ae77uSzim5PiSOlHXz4caG3U+VwdB04t89/1O/w1cDnyilFU="; 
   $receiver = "U260c3c643d920b8e07e0f3d8b887e30a";
   
-  
-$msg='{
-"to":"U260c3c643d920b8e07e0f3d8b887e30a",
-  "messages":[
-  	{
-  		"type":"flex",
-  		"altText":"New Registration Info !!",
-  		"contents":{
-			"type": "bubble",
-			"header":{
-				"type":"box",
-				"layout":"vertical",
-				"spacing":"none",
-				"contents": [
-					{
-				      "type": "text",
-				      "text": "ข้อมูลการลงทะเบียน",
-				      "align":"center",
-				      "weight":"bold",
-				      "margin":"none"
-    				}	
-				]
-			},
-			"hero":{
-				"type":"image",
-				"url":"https://profile.line-scdn.net/0hiBNF8a_VNm1zPxtIW6JJOk96OAAEETAlCwpxA1M_YFpaXHc5SFt9DQU3ag8KDXM7RlhxX1Q_ag1f",
-				"size":"md"
-			},
-			"body": {
-				"type": "box",
-		    	"layout": "vertical",
-		    	"contents": [
-		    		{
-		        		"type": "text",
-		        		"text": "iSer",
-		        		"size": "lg",
-				    	"weight":"bold",
-		        		"align":"center",
-		        		"margin":"xl"
-		    		},
-		    		{
-		        		"type": "text",
-		        		"text": "เพิ่งลงทะเบียนกับเราเมื่อสักครู่",
-		        		"size": "xs",
-		        		"align":"center",
-		        		"margin":"xl"
-		    		},
-		    		{
-		    			"type":"separator",
-		    			"margin":"xl"
-		    		},
-		    		{
-		        		"type": "text",
-		        		"text": "dfgshdryjutjtyjhghjgjghjghjู่",
-		        		"size": "xs",
-		        		"align":"center",
-		        		"margin":"xl",
-		        		"color":"#CCCCCC"
-		    		}
+ 
+$body=["type"=> "box",
+		    	"layout"=> "vertical",
+		    	"contents"=> [
+		    		[
+		        		"type"=> "text",
+		        		"text"=> "iSer",
+		        		"size"=> "lg",
+				    	"weight"=>"bold",
+		        		"align"=>"center",
+		        		"margin"=>"xl"
+		    		],
+		    		[
+		        		"type"=> "text",
+		        		"text"=> "เพิ่งลงทะเบียนกับเราเมื่อสักครู่",
+		        		"size"=> "xs",
+		        		"align"=>"center",
+		        		"margin"=>"xl"
+		    		],
+		    		[
+		    			"type"=>"separator",
+		    			"margin"=>"xl"
+		    		],
+		    		[
+		        		"type"=> "text",
+		        		"text"=> "dfgshdryjutjtyjhghjgjghjghjู่",
+		        		"size"=> "xs",
+		        		"align"=>"center",
+		        		"margin"=>"xl",
+		        		"color"=>"#CCCCCC"
+		    		]
 		    	]
-			}
-		}
-  	}]
-}';
-	$flex =['type','header','hero','body'];
+	];
+$hero = [				"type"=>"image",
+				"url"=>"https://profile.line-scdn.net/0hiBNF8a_VNm1zPxtIW6JJOk96OAAEETAlCwpxA1M_YFpaXHc5SFt9DQU3ag8KDXM7RlhxX1Q_ag1f",
+				"size"=>"md"];
+$header=["type"=>"box",
+				"layout"=>"vertical",
+				"spacing"=>"none",
+				"contents"=> [
+					[
+				      "type"=> "text",
+				      "text"=> "ข้อมูลการลงทะเบียน",
+				      "align"=>"center",
+				      "weight"=>"bold",
+				      "margin"=>"none"
+    				]	
+				]
+	];
+	$flex =['type'=>'bubble','header'=>$header,'hero'=>$hero,'body'=>$body];
 		$messages = [
 			'type' => 'flex',
   			"altText"=>"New Registration Info !!",
@@ -79,20 +64,9 @@ $msg='{
 				'messages' => [$messages],
 			];
       
+     
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-			$post = json_encode($msg);
+			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
