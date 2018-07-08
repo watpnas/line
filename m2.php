@@ -28,7 +28,7 @@ $body=["type"=> "box",
 		    		[
 		        		"type"=> "text",
 		        		"text"=> "Alarm Program: X",
-		        		"size"=> "xs",,
+		        		"size"=> "xs",
 		        		"margin"=>"xl"
 		    		],
 		    		[
