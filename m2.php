@@ -3,7 +3,7 @@
   $receiver = "U260c3c643d920b8e07e0f3d8b887e30a";
   
   
-  {
+$msg='  {
 "to":"U260c3c643d920b8e07e0f3d8b887e30a",
   "messages":[
   	{
@@ -65,12 +65,12 @@
 			}
 		}
   	}]
-}
-	$flex ="คุณ ".$_GET['name']." เพิ่งลงทะเบียนเมื่อซักครู่\nรหัสอ้างอิง: ".$_GET['user'];
-$messages = [
-				'type' => 'flex',
-  		"altText"=>"New Registration Info !!",
-  		"contents"=> $flex
+}';
+	$flex =['type','header','hero','body'];
+		$messages = [
+			'type' => 'flex',
+  			"altText"=>"New Registration Info !!",
+  			"contents"=> $flex
 			];
 // Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/push';
@@ -92,7 +92,7 @@ $messages = [
       
       
       
-			$post = json_encode($data);
+			$post = json_encode($msg);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
