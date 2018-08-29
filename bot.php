@@ -49,17 +49,29 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}else if($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos($event['message']['text'], 'hidixell') === 0){
 			
-
-
-			
-			
 			
 			$replyToken = $event['replyToken'];
-			$text = json_encode($event);
+			$text = json_encode($event);	
+
+			$opts = array('http' =>
+   					 array(
+        					'method'  => 'POST',
+       						 'header'  => 'Content-type: application/json',
+       						 'content' => $text
+    						)
+				);
+
+			$context  = stream_context_create($opts);
+			$resMes = file_get_contents("http://service.dixellasia.com:9998/activecollab/talk1982.php", false, $context);
+			
+			
+			
+			
+			
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => $resMes
 			];
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
@@ -77,23 +89,6 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
-			
-			$relaydata = [
-				'data' => $text
-			];
-			
-			$postdata = http_build_query( $relaydata);
-
-			$opts = array('http' =>
-   					 array(
-        					'method'  => 'POST',
-       						 'header'  => 'Content-type: application/json',
-       						 'content' => $postdata
-    						)
-				);
-
-			$context  = stream_context_create($opts);
-			$resMes = file_get_contents("http://service.dixellasia.com:9998/activecollab/talk1982.php", false, $context);
 		}
 			
 	}
