@@ -51,7 +51,7 @@ if (!is_null($events['events'])) {
 			
 			$resMes = file_get_contents("http://service.dixellasia.com:9998/activecollab/talk1982.php");
 			$replyToken = $event['replyToken'];
-			$text = $resMes;
+			$text = $event;
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
