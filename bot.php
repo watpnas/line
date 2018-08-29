@@ -81,7 +81,7 @@ if (!is_null($events['events'])) {
 			
 			
 			if($resMes==""){
-				return;
+				//return;
 			}
 
 			$replyToken = $event['replyToken'];			
