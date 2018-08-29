@@ -51,10 +51,16 @@ if (!is_null($events['events'])) {
 			
 			$resMes = file_get_contents("http://service.dixellasia.com:9998/activecollab/talk1982.php");
 			$replyToken = $event['replyToken'];
+			$text = $resMes;
+			// Build message to reply back
+			$messages = [
+				'type' => 'text',
+				'text' => $text
+			];
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$resMes],
+				'messages' => [$messages],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
