@@ -51,7 +51,8 @@ if (!is_null($events['events'])) {
 			
 			
 			$replyToken = $event['replyToken'];
-			$postdata = http_build_query($event);
+			$data = ['event'=>'test from github'];
+			$postdata = http_build_query($data);
 			$opts = array('http' =>
    					 array(
         					'method'  => 'POST',
