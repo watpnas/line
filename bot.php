@@ -80,7 +80,7 @@ if (!is_null($events['events'])) {
 			
 			
 			
-			if($resMes==""){
+			if($resMes===""){
 				//return;
 			}
 
