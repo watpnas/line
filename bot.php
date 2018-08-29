@@ -59,7 +59,7 @@ if (!is_null($events['events'])) {
 			
 			//$data = ['event' => json_encode($event)];
 			$data = ['event' => [
-					'type'=> $type,
+					'type'=> $sourcetype,
 					'userId' => $userId,
 					'groupId' => $groupId,
 					'roomId' => $roomId,
