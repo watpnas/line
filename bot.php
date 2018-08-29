@@ -51,7 +51,7 @@ if (!is_null($events['events'])) {
 			
 			
 			$replyToken = $event['replyToken'];
-			$data = ['event'=>$json_encode($event)];
+			$data = ['event' => json_encode($event)];
 			$postdata = http_build_query($data);
 			$opts = array('http' =>
    					 array(
