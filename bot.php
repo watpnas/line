@@ -49,9 +49,23 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}else if($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos($event['message']['text'], 'hidixell') === 0){
 			
+			$sourcetype =isset($event['source']['type'])? $event['source']['type']: Null;
+			$userId = isset($event['source']['userId'])? $event['source']['userId']: Null;
+			$groupId = isset($event['source']['groupId'])? $event['source']['groupId']: Null;
+			$roomId = isset($event['source']['roomId'])? $event['source']['roomId']: Null;
+			$msg=str_replace('hidixell','',$event['message']['text']);
+			trim($msg," ");
 			
-			$replyToken = $event['replyToken'];
-			$data = ['event' => json_encode($event)];
+			
+			//$data = ['event' => json_encode($event)];
+			$data = ['event' => [
+					'type'=> $type,
+					'userId' => $userId,
+					'groupId' => $groupId,
+					'roomId' => $roomId,
+					'message' => $msg
+				]
+			];
 			$postdata = http_build_query($data);
 			$opts = array('http' =>
    					 array(
@@ -66,8 +80,11 @@ if (!is_null($events['events'])) {
 			
 			
 			
-			
-			
+			if($resMes=""){
+				return;
+			}
+
+			$replyToken = $event['replyToken'];			
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
