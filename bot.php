@@ -58,14 +58,14 @@ if (!is_null($events['events'])) {
 			
 			
 			//$data = ['event' => json_encode($event)];
-			$data = ['event' => [
+			$jsdata = [
 					'type'=> $sourcetype,
 					'userId' => $userId,
 					'groupId' => $groupId,
 					'roomId' => $roomId,
 					'message' => $msg
-				]
-			];
+				];
+			$data = ['event' => json_encode($jsdata)];
 			$postdata = http_build_query($data);
 			$opts = array('http' =>
    					 array(
