@@ -80,9 +80,9 @@ if (!is_null($events['events'])) {
 			
 			
 			
-			if($resMes===""){
+			//if($resMes===""){
 				//return;
-			}
+			//}
 
 			$replyToken = $event['replyToken'];			
 			// Build message to reply back
