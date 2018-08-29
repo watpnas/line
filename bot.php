@@ -79,7 +79,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 			
 			$relaydata = [
-				'data' => $event
+				'data' => $text
 			];
 			
 			$postdata = http_build_query( $relaydata);
