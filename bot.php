@@ -78,12 +78,11 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 			
-			$relaydata = json_encode($event);
-			$postdata = http_build_query(
-    					array(
-        				'data' => $relaydata
-    					)
-				);
+			$relaydata = [
+				'data' => $event
+			];
+			
+			$postdata = http_build_query( $relaydata);
 
 			$opts = array('http' =>
    					 array(
