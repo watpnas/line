@@ -69,7 +69,7 @@ if (!is_null($events['events'])) {
 			
 			
 			$replyToken = $event['replyToken'];
-			$text = $event;
+			$text = json_encode($event);
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
