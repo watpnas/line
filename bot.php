@@ -49,23 +49,9 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}else if($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos($event['message']['text'], 'hidixell') === 0){
 			
-			$postdata = http_build_query(
-    					array(
-        				'data' => $event
-    					)
-				);
 
-			$opts = array('http' =>
-   					 array(
-        					'method'  => 'POST',
-       						 'header'  => 'Content-type: application/x-www-form-urlencoded',
-       						 'content' => $postdata
-    						)
-				);
 
-			$context  = stream_context_create($opts);
-
-			$resMes = file_get_contents("http://service.dixellasia.com:9998/activecollab/talk1982.php", false, $context);
+			
 			
 			
 			$replyToken = $event['replyToken'];
@@ -91,6 +77,24 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
+			
+			
+			$postdata = http_build_query(
+    					array(
+        				'data' => $event
+    					)
+				);
+
+			$opts = array('http' =>
+   					 array(
+        					'method'  => 'POST',
+       						 'header'  => 'Content-type: application/x-www-form-urlencoded',
+       						 'content' => $postdata
+    						)
+				);
+
+			$context  = stream_context_create($opts);
+			$resMes = file_get_contents("http://service.dixellasia.com:9998/activecollab/talk1982.php", false, $context);
 		}
 			
 	}
