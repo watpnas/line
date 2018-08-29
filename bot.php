@@ -51,13 +51,12 @@ if (!is_null($events['events'])) {
 			
 			
 			$replyToken = $event['replyToken'];
-			$text = json_encode($event);	
-
+			$postdata = http_build_query($event);
 			$opts = array('http' =>
    					 array(
         					'method'  => 'POST',
-       						 'header'  => 'Content-type: application/json',
-       						 'content' => $text
+       						 'header'  => 'Content-type: application/x-www-form-urlencoded',
+       						 'content' => $postdata
     						)
 				);
 
