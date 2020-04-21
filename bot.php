@@ -79,6 +79,7 @@ if (!is_null($events['events'])) {
 			//$resMes = file_get_contents("http://service.dixellasia.com:9998/activecollab/talk1982.php", false, $context);
 			$resMes = file_get_contents("http://cloud.dixellasia.com:1889/line.php", false, $context);
 
+			$resMes ="Hi";
 			//if($resMes===""){
 				//return;
 			//}
