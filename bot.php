@@ -76,7 +76,8 @@ if (!is_null($events['events'])) {
 				);
 
 			$context  = stream_context_create($opts);
-			$resMes = file_get_contents("http://service.dixellasia.com:9998/activecollab/talk1982.php", false, $context);
+			//$resMes = file_get_contents("http://service.dixellasia.com:9998/activecollab/talk1982.php", false, $context);
+			$resMes = file_get_contents("http://cloud.dixellasia.com:1889/line", false, $context);
 			
 			
 			
